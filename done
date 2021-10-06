@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+
+int main()
+
+
+{
+
+	char islem;
+	double num1, num2, sonuc;
+
+	printf("islem turu secin (+,-,*,/): \n");
+	scanf_s("%c", &islem);
+
+	if (islem == '+')
+	{
+		printf("toplama islemi \n");
+	}
+
+	else if (islem == '-')
+
+	{
+		printf("cikarma islemi \n");
+	}
+
+	else if (islem == '*')
+
+	{
+		printf("carpma islemi \n");
+	}
+
+	else if (islem == '/')
+
+	{
+		printf("bolme islemi \n");
+	}
+
+	printf("ilk sayiyi girin: \n");
+	scanf_s("%lf", &num1);
+	printf("ikinci sayiyi girin: \n");
+	scanf_s("%lf", &num2);
+
+	switch (islem)
+	{
+	case '+':
+
+			sonuc = num1 + num2;
+			printf("%lf ile %lf 'nin toplami %lf 'dir \n", num1, num2, sonuc);
+			break;
+		
+	case '-':
+				sonuc = num1 - num2;
+				printf("%lf 'den %lf cikarsa sonuc %lf 'dir\n", num1, num2, sonuc);
+				break;
+
+	case '*':
+					sonuc = num1 * num2;
+					printf("%lf ile %lf 'nin carpimi %lf 'dir \n", num1, num2, sonuc);
+					break;
+
+	case '/':
+						if (num2 == 0)
+						{
+							printf("hicbir sayi 0'a bolunmez! lutfen bolen icin yeni bir sayi girin: \n");
+							scanf_s("%lf", &num2);
+						}
+
+						sonuc = num1 / num2;
+						printf("%lf 'nin %lf 'ye bolunmesinde sonuc %lf 'dir", num1, num2, sonuc);
+						break;
+
+					default:
+						printf("yanlis bir seyler oldu lutfen system32'yi silin \n");
+
+	}
+
+	return 0;
+}
